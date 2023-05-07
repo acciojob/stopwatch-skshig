@@ -5,13 +5,19 @@ let total_seconds = 0;
 let timerObj = null;
 timeDisplay(total_seconds);
 
+function displayNum(num) {
+    if (num < 10) {
+        return "0" + num.toString();
+    }
+    return num.toString();
+}
 function timeInString(passed_seconds){
     
     let in_seconds = Math.floor(passed_seconds % 60);
     let in_hours = Math.floor(passed_seconds / 3600);
     let total_minutes = Math.floor(passed_seconds / 60);
     let in_minutes = total_minutes % 60;
-    let display_time= in_hours + ":" + in_minutes + ":" + in_seconds ;
+    let display_time= displayNum(in_hours) + ":" + displayNum(in_minutes) + ":" + displayNum(in_seconds) ;
     return display_time;
 }
 
