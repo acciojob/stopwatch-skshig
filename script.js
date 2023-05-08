@@ -1,6 +1,7 @@
 //your code here
 let div_time = document.getElementById('time');
-let div_start = document.getElementById('start')
+let div_start = document.getElementById('start');
+let div_pause = document.getElementById('pause');
 let total_seconds = 0;
 let timerObj = null;
 timeDisplay(total_seconds);
@@ -39,7 +40,17 @@ function start(){
 
 function pause(){
     clearInterval(timerObj);
+    div_pause.innerHTML = "continue";
+    div_pause.addEventListener('click',function(){
+        start();
+        div_pause.innerHTML = "pause";
+    });
+    // div_pause.innerHTML = "pause";
+
 }
+// function continueTimer(){
+//     timerObj = setInterval(incrementAndDisplay,1000);
+// }
 
 function stop(){
     total_seconds=0;
