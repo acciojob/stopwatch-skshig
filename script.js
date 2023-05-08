@@ -53,9 +53,13 @@ function pause(){
 // }
 
 function stop(){
+    let div_stop = document.getElementById('stop');
     total_seconds=0;
     timeDisplay(0)
     pause();
+    div_stop.disabled = true;
+    div_pause.disabled = true;
+    div_start.disabled = false;
     
 }
 timeInString();
